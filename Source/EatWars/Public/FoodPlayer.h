@@ -39,6 +39,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	FString GetTotalDamageString();
 
+	void SetIsDead(bool Value);
+
+	UFUNCTION(BlueprintCallable)
+	bool GetIsDead();
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -90,6 +95,8 @@ private:
 	TSubclassOf<AAttacks> UltAtkBp;
 	float UltAtkCd;
 	float UltAtkTimeAcc;
+
+	bool IsDead;
 
 	int HitNumber;
 	int KilledHumanCount;

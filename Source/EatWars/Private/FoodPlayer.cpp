@@ -43,6 +43,8 @@ AFoodPlayer::AFoodPlayer(const FObjectInitializer &ObjectInitializer) {
 	HitNumber = 0;
 	KilledHumanCount = 0;
 	TotalDamage = 0.f;
+
+	IsDead = false;
 }
 
 void AFoodPlayer::BeginPlay() {
@@ -224,4 +226,12 @@ FString AFoodPlayer::GetKilledHumanCountString() {
 
 FString AFoodPlayer::GetTotalDamageString() {
 	return FString::Printf(TEXT("Damage Dealt : %.2f (= %d Human)"), TotalDamage, (int) TotalDamage);
+}
+
+void AFoodPlayer::SetIsDead(bool Value) {
+	IsDead = Value;
+}
+
+bool AFoodPlayer::GetIsDead() {
+	return IsDead;
 }
